@@ -15,6 +15,7 @@
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
+    "storybook": "start-storybook -s public -p 7007 --no-manager-cache",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
     "test:lint": "eslint .",
@@ -23,10 +24,45 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "prettier",
+      "prettier/@typescript-eslint",
+      "prettier/react"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "curly": "error"
+    }
+  },
+  "prettier": {
+    "printWidth": 120
+  },
   "peerDependencies": {
     "react": "^16.0.0"
   },
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@storybook/addon-storysource": "^6.3.12",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
+  },
   "devDependencies": {
+    "@storybook/addon-a11y": "^6.1.11",
+    "@storybook/addon-actions": "^6.1.4",
+    "@storybook/addon-console": "^1.2.2",
+    "@storybook/addon-contexts": "^5.3.21",
+    "@storybook/addon-essentials": "^6.1.4",
+    "@storybook/addon-links": "^6.1.11",
+    "@storybook/addons": "^6.1.10",
+    "@storybook/react": "^6.1.4",
+    "@storybook/theming": "^6.1.10",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -34,28 +70,33 @@
     "@types/node": "^12.12.38",
     "@types/react": "^16.9.27",
     "@types/react-dom": "^16.9.7",
+    "@types/styled-components": "^5.1.15",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
-    "microbundle-crl": "^0.13.10",
     "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-react-app": "^5.2.1",
     "eslint-config-standard": "^14.1.0",
     "eslint-config-standard-react": "^9.2.0",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^2.5.1",
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^2.2.0",
+    "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
-    "typescript": "^3.7.5"
+    "storybook-addon-designs": "^5.4.2",
+    "storybook-addon-themes": "^6.0.0",
+    "typescript": "^4.0.5"
   },
   "files": [
     "dist"

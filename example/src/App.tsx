@@ -1,10 +1,14 @@
-import React from 'react'
+import React from "react";
 
-import { ExampleComponent } from 'atomic-uix'
-import 'atomic-uix/dist/index.css'
+import { ColoredHeadingOne, ColoredHeadingTwo } from "atomic-uix";
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
-}
+  return (
+    <div>
+      <ColoredHeadingOne color={"red"} text="Colored heading one is working 😄" />
+      <ColoredHeadingTwo color={"blue"} text="Colored heading two is working 😄" />
+    </div>
+  );
+};
 
-export default App
+export default App;

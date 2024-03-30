@@ -1,10 +1,5 @@
-import * as React from 'react'
-import styles from './styles.module.css'
+export { Button, ButtonGroupProps, ButtonProps } from "~/components/atoms/Button/Button";
+export * from "~/components/atoms/Button/Button";
 
-interface Props {
-  text: string
-}
-
-export const ExampleComponent = ({ text }: Props) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
+export { ColoredHeadingOne, ColoredHeadingTwo } from "~/components/atoms/Headings/Headings";
+export * from "~/components/atoms/Headings/Headings";
